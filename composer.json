@@ -1,0 +1,25 @@
+{
+    "name": "derakhshani/project-uni",
+    "description": "university final project about sale like https://bidzila.com/",
+    "autoload": {
+        "psr-4": {
+            "app\\": "./"
+        }
+    },
+    "authors": [
+        {
+            "name": "hosein derakhshani",
+            "email": "hosein.derakhshani76@gmail.com"
+        }
+    ],
+    "require": {
+
+        "vlucas/phpdotenv": "^5.3",
+        "firebase/php-jwt": "^5.4",
+        "cboden/ratchet": "^0.4.1",
+        "ext-json": "*",
+        "ext-pdo": "*",
+        "ext-curl": "*",
+      "ext-sockets": "*"
+    }
+}

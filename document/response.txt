@@ -1,0 +1,158 @@
+
+----------------------------user--------------------
+api1->/send-otp
+// invalid input
+------>1
+//not send sms
+---->2
+//not generate verification code in db,problem db
+---->3
+//not register before,so redirect /register api
+--->4
+
+api2->/verify
+//invalid verification code so verified = 0
+----->0
+//not send sms before
+----->1
+//user not registered before,so call /register api
+------>mobile
+//invalid input
+------>2
+
+api3->/register
+//registered
+----->mobile
+//problem db not register
+----->1
+//invalid input
+------>2
+
+api4--->/user/show
+//invalid api_token
+----->1
+//empty api_token
+------>2
+
+api5---->/user/update
+//update user
+---->0
+//file not uploaded
+------>1
+//user not found
+----->2
+//not enough input
+----->3
+//image uploaded more than 5MB
+----->4
+//file uploaded not image
+------>5
+//empty api_token
+------>6
+
+api6---->/user/charge_wallet
+//add wallet
+---->wallet
+//problem db
+----->1
+//user not found
+----->2
+//not enough input
+----->3
+
+api7--->/user/show-wallet
+//not enough input
+----->1
+//no found user
+----->2
+
+
+
+------------------------------auction------------------
+api1--->/auction/create
+//problem db not register
+------>1
+//this auction exist in db
+------>2
+//not enough input
+----->3
+//invalid access
+------>4
+//not exist product
+------>5
+//please insert valid status in status table
+----->6
+//invalid status id
+------>7
+
+api2--->/auction/add-participant
+//add participant
+---->0
+//problem db not add
+----->1
+//capacity full, can not add participant to auction
+------>2
+//auction not exist or held before
+------>3
+//user not found
+------>4
+//not enough wallet
+----->5
+//not reduce wallet problem db
+----->6
+//not enough input
+----->7
+//user add before  in auction
+----->8
+
+api3---->/auction/show
+//auction code is empty
+---->1
+//auction not exist
+----->2
+
+
+api4--->/auction/charge_bid
+//charge bid
+----> 0
+//not enough input
+---->1
+//not found user
+----->2
+//not found auction
+---->3
+//user not register in auction before
+---->4
+//not enough money
+---->5
+
+api5-->/auction/list_old_auctions
+//not enough input
+--->1
+
+api6--->/auction/list_auctions
+//not enough input
+--->1
+
+api7--->/auction/winner
+//not enough input
+--->1
+//invalid auction
+---->2
+
+api8--->/auction/winners
+//not enough input
+--->1
+
+api9---->/auction/list_participants
+//not enough input
+----->1
+//empty list
+----->2
+
+
+
+
+
+
+

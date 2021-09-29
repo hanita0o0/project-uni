@@ -1,0 +1,26 @@
+1)run command--->composer install for install packages
+2)check .env file
+3)create databse in mysql db with name--->project-uni
+4)run migrations.php file with command ---->php migrations.php  that creates all 5tables
+5)in table users create one row for admin with mobile --->09369689538
+6)in status table create 3 rows "برگزارشده","برگزارنشده","درحال برگزاری"
+7)all images of users and products save in upload directory
+8)you can skip 4 to 7 levels with import project_uni.sql file in mysql
+10)admin with login can create auction  ,for create products just insert in database
+11) this website use websocket for hold auction
+12)for run websocket server go to public directory and use command ---->php server.php
+13)all routes be in index.php file in public directory
+14)for run server go to public directory and use command ---->
+php -S localhost:8081
+15)websocket run on port 8081 for change that go to server.php file
+16)for test websocket in postman insert new button and select websocket Api
+and in url set ---->ws://localhost:8081
+in messages set json and insert this:
+{
+    "token":"",
+    "auction_id":,
+    "base_price":
+}
+then insert send button
+
+note))) does not hold auctions Simultaneously anymore
